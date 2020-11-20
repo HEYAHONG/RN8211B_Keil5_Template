@@ -7,9 +7,10 @@
 
   <Targets>
     <Target>
-      <TargetName>Target 1</TargetName>
+      <TargetName>RN8211B</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
+      <pCCUsed>5060422::V5.06 update 4 (build 422)::ARMCC</pCCUsed>
       <TargetOption>
         <TargetCommonOption>
           <Device>RN8211B</Device>
@@ -130,12 +131,12 @@
             <UseExternalTool>0</UseExternalTool>
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
-            <Capability>0</Capability>
-            <DriverSelection>-1</DriverSelection>
+            <Capability>1</Capability>
+            <DriverSelection>4096</DriverSelection>
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3></Flash3>
+          <Flash3>"" ()</Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -333,7 +334,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath></IncludePath>
+              <IncludePath>.\CMSIS;.\CMSIS\core;.\FreeRTOS\FreeRTOS-Kernel\include;.\FreeRTOS\FreeRTOS-Kernel\portable\RVDS\ARM_CM0;.\FreeRTOS\FreeRTOS-Port</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -351,7 +352,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath></IncludePath>
+              <IncludePath>.\FreeRTOS\FreeRTOS-Port</IncludePath>
             </VariousControls>
           </Aads>
           <LDads>
@@ -375,7 +376,124 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Source Group 1</GroupName>
+          <GroupName>CMSIS</GroupName>
+          <Files>
+            <File>
+              <FileName>RN8211.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\CMSIS\RN8211.h</FilePath>
+            </File>
+            <File>
+              <FileName>startup_RN8211.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\CMSIS\startup_RN8211.s</FilePath>
+            </File>
+            <File>
+              <FileName>system_RN8211.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\CMSIS\system_RN8211.c</FilePath>
+            </File>
+            <File>
+              <FileName>system_RN8211.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\CMSIS\system_RN8211.h</FilePath>
+            </File>
+            <File>
+              <FileName>core_cm0.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\CMSIS\core\core_cm0.c</FilePath>
+            </File>
+            <File>
+              <FileName>core_cm0.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\CMSIS\core\core_cm0.h</FilePath>
+            </File>
+            <File>
+              <FileName>core_cmFunc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\CMSIS\core\core_cmFunc.h</FilePath>
+            </File>
+            <File>
+              <FileName>core_cmInstr.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\CMSIS\core\core_cmInstr.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>main</GroupName>
+          <Files>
+            <File>
+              <FileName>main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\main.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>FreeRTOS</GroupName>
+          <Files>
+            <File>
+              <FileName>croutine.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FreeRTOS\FreeRTOS-Kernel\croutine.c</FilePath>
+            </File>
+            <File>
+              <FileName>event_groups.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FreeRTOS\FreeRTOS-Kernel\event_groups.c</FilePath>
+            </File>
+            <File>
+              <FileName>list.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FreeRTOS\FreeRTOS-Kernel\list.c</FilePath>
+            </File>
+            <File>
+              <FileName>queue.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FreeRTOS\FreeRTOS-Kernel\queue.c</FilePath>
+            </File>
+            <File>
+              <FileName>stream_buffer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FreeRTOS\FreeRTOS-Kernel\stream_buffer.c</FilePath>
+            </File>
+            <File>
+              <FileName>tasks.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FreeRTOS\FreeRTOS-Kernel\tasks.c</FilePath>
+            </File>
+            <File>
+              <FileName>timers.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FreeRTOS\FreeRTOS-Kernel\timers.c</FilePath>
+            </File>
+            <File>
+              <FileName>port.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FreeRTOS\FreeRTOS-Kernel\portable\RVDS\ARM_CM0\port.c</FilePath>
+            </File>
+            <File>
+              <FileName>heap_4.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FreeRTOS\FreeRTOS-Kernel\portable\MemMang\heap_4.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>FreeRTOS-Port</GroupName>
+          <Files>
+            <File>
+              <FileName>freertos.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FreeRTOS\FreeRTOS-Port\freertos.c</FilePath>
+            </File>
+            <File>
+              <FileName>FreeRTOSConfig.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\FreeRTOS\FreeRTOS-Port\FreeRTOSConfig.h</FilePath>
+            </File>
+          </Files>
         </Group>
       </Groups>
     </Target>
