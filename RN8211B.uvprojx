@@ -14,8 +14,8 @@
       <TargetOption>
         <TargetCommonOption>
           <Device>RN8211B</Device>
-          <Vendor>Rerengy</Vendor>
-          <PackID>Rerengy.RN8211B_DFP.1.0.0</PackID>
+          <Vendor>Renergy</Vendor>
+          <PackID>Renergy.RN8211B_DFP.1.0.0</PackID>
           <Cpu>IRAM(0x10000000,0x2000) IROM(0x00000000,0x20000) CPUTYPE("Cortex-M0") CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
@@ -136,7 +136,7 @@
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3>"" ()</Flash3>
+          <Flash3></Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
